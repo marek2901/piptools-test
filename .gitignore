@@ -1,0 +1,23 @@
+# Byte-compiled
+__pycache__/
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
