@@ -6,6 +6,8 @@ deps-sync:
 	pip-sync requirements.txt
 dev-deps-sync:
 	pip-sync dev-requirements.txt requirements.txt
+deps: deps-compile deps-sync
+dev-deps: dev-deps-compile dev-deps-sync
 
 test:
 	python manage.py test
