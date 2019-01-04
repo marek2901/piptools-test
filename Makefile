@@ -1,6 +1,6 @@
 deps-compile:
-	pip-compile --output-file requirements.txt requirements.in
-	pip-compile --output-file dev-requirements.txt dev-requirements.in
+	@pip-compile --output-file requirements.txt requirements.in
+	@pip-compile --output-file dev-requirements.txt dev-requirements.in
 deps-sync:
 	pip-sync requirements.txt
 dev-deps-sync:
