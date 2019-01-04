@@ -8,7 +8,7 @@ appnope==0.1.0            # via ipython
 autopep8==1.4.3
 backcall==0.1.0           # via ipython
 decorator==4.3.0          # via ipython, traitlets
-django==2.1.4
+django==2.1.5
 djangorestframework==3.9.0
 factory-boy==2.11.1
 faker==1.0.1
