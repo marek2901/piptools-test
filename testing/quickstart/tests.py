@@ -12,7 +12,7 @@ class EloTest(TestCase):
 
     def test_retrieving_all_users(self):
         UserFactory().save()
-        UserFactory(username='Martin').save()
+        UserFactory(username='Mark').save()
         response = client.get('/users/')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()['count'], 2)
