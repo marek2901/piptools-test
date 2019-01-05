@@ -1,5 +1,9 @@
-dev-deps: deps-compile dev-deps-sync
-deps: deps-compile deps-sync
+dev-deps:
+	@$(MAKE) deps-compile
+	@$(MAKE) dev-deps-sync
+deps:
+	@$(MAKE) deps-compile
+	@$(MAKE) deps-sync
 
 deps-compile: ensure-pip-tools
 	@pip-compile --output-file requirements.txt requirements.in
