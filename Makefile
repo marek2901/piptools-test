@@ -1,12 +1,17 @@
-deps-compile:
+dev-deps: deps-compile dev-deps-sync
+deps: deps-compile deps-sync
+
+deps-compile: ensure-pip-tools
 	@pip-compile --output-file requirements.txt requirements.in
 	@pip-compile --output-file dev-requirements.txt dev-requirements.in
+
 deps-sync:
 	pip-sync requirements.txt
 dev-deps-sync:
 	pip-sync dev-requirements.txt
-deps: deps-compile deps-sync
-dev-deps: deps-compile dev-deps-sync
+
+ensure-pip-tools:
+	@pip-compile --version > /dev/null 2>&1 || pip install pip-tools
 
 test:
 	python manage.py test
