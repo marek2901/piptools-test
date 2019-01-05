@@ -3,17 +3,20 @@ dev-sync: ensure-pip-tools
 sync: ensure-pip-tools
 	@pip-sync requirements.txt
 
-deps-compile:
+deps-compile: ensure-pip-tools
 	@pip-compile --output-file requirements.txt requirements.in
 	@pip-compile --output-file dev-requirements.txt dev-requirements.in
-deps-upgrade:
+deps-upgrade: ensure-pip-tools
+	@pip-compile --upgrade --output-file requirements.txt requirements.in
+	@pip-compile --upgrade --output-file dev-requirements.txt dev-requirements.in
+dep-upgrade: ensure-pip-tools
 ifdef P
 	@pip-compile -P $(P) --output-file requirements.txt requirements.in
 	@$(MAKE) deps-compile
 else
 	@echo "specify which deps to upgrade for ex: make deps-upgrade P=Django"
 endif
-dev-deps-upgrade:
+dev-dep-upgrade: ensure-pip-tools
 ifdef P
 	@pip-compile -P $(P) --output-file dev-requirements.txt dev-requirements.in
 	@$(MAKE) deps-compile

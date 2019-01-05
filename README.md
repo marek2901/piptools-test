@@ -34,18 +34,20 @@ make run
 
 ## Makefile description
 
-* deps-compile
-    > compile only production dependencies
-* dev-deps-compile
-    > compile prod deps and debug/develop
-* deps-sync
+* dev-sync
+    > synchronise both production and develop, can also be invoke with just a `make` command
+* sync
     > synchronise only production deps
-* dev-deps-sync
-    > synchronise both production and develop
-* deps
-    > run prod deps compile and sync
-* dev-deps
-    > run prod and develop/debug deps compile and sync
+* deps-compile
+    > compile both in files
+* deps-upgrade
+    > automatically updates all packages to newest versions (run with caution)
+* dep-upgrade
+    > upgrade single dependency, you can also specify a versions to upgrade `make dep-upgrade P=Django==2.1.4`
+* dev-dep-upgrade
+    > similiar as `dev-upgrade` but just for dev dependencies
+* ensure-pip-tools
+    > installs pip-tools if they are missing
 * test
     > run tests
 * run
