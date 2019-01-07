@@ -21,7 +21,7 @@ Just to learn how to setup pip-tools correctly.
         * activate `. ./.env/bin/activate` (make sure you are in project dir)
 * Install project dependencies
 ```bash
-make dev-deps-sync
+make
 ```
 * run tests or start app
 ```bash
